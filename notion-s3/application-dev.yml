@@ -25,4 +25,4 @@ server:
 
 integrations:
   core:
-    url: localhost:8090
+    url: "localhost:8090"
