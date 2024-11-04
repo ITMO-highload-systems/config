@@ -1,6 +1,4 @@
 spring:
-  application:
-    name: notion-code-exec
   datasource:
     url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/notion-code-exec}
     username: ${DATABASE_USERNAME:postgres}
