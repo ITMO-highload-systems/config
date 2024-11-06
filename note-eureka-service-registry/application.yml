@@ -1,0 +1,8 @@
+eureka:
+  server:
+    response-cache-update-interval-ms: 1000
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+server:
+  port: 8761
