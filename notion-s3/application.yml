@@ -3,10 +3,19 @@ spring:
     username: ${DATABASE_USERNAME:postgres}
     password: ${DATABASE_PASSWORD:postgres}
     url: ${DATABASE_URL:r2dbc:postgresql://localhost:5432/notion-s3}
+  application:
+    name: notion-s3
   servlet:
     multipart:
       max-file-size: ${MAX_FILE_SIZE:200MB}
       max-request-size: ${MAX_REQUEST_SIZE:200MB}
+  cloud:
+    discovery:
+      client:
+        simple:
+          instances:
+            notion[0]:
+              uri: http://localhost:234224 # спросить
 
   flyway:
     enabled: true
@@ -19,8 +28,32 @@ minio:
   bucket: ${MINIO_BUCKET:my-bucket}
 
 server:
-  port: ${SERVER_PORT:8092}
+  port: 0
 
 integrations:
   core:
     url: "localhost:8090"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+application:
+  security:
+    jwt:
+      expiration: 123456789
+      server-expiration: 123456789009876
+      secret-key: MegaLargeSigningSecretKeyForDemoApplicationMegaLargeSigningSecretKeyForDemoApplication
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
