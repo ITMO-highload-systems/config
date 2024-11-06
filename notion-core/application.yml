@@ -1,16 +1,20 @@
 application:
   security:
     jwt:
+      expiration: 123456789
+      server-expiration: 123456789009876
       secret-key: MegaLargeSigningSecretKeyForDemoApplicationMegaLargeSigningSecretKeyForDemoApplication
 
 spring:
+  application:
+    name: notion-core
   servlet:
     multipart:
       max-file-size: ${SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE:200MB}
       max-request-size: ${SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE:200MB}
       enabled: true
   datasource:
-    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/postgres}
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/notion-core}
     username: ${DATABASE_USERNAME:postgres}
     password: ${DATABASE_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
@@ -23,13 +27,7 @@ sse:
   timeout: 3000
 
 server:
-  port: ${SERVER_PORT:8090}
-
-integrations:
-  image:
-    url: "localhost:8092"
-  executor:
-    url: "localhost:8091"
+  port: 0
 
 feign:
   hystrix:
@@ -45,15 +43,13 @@ management:
   endpoints:
     web:
       exposure:
-        include: hystrix.stream
-
-#eureka:
-#  client:
-#    service-url:
-#      defaultZone: http://localhost:8761/eureka
+        include: "*"
+        exclude: shutdown
 
 eureka:
   client:
-    enabled: false
     service-url:
-      registerWithEureka: false
+      defaultZone: http://localhost:8761/eureka
+logging:
+  level:
+    root: debug
