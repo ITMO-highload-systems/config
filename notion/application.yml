@@ -6,8 +6,6 @@ application:
       secret-key: MegaLargeSigningSecretKeyForDemoApplicationMegaLargeSigningSecretKeyForDemoApplication
 
 spring:
-  application:
-    name: notion-core
   datasource:
     url: ${NOTION_CORE_DATABASE_URL:jdbc:postgresql://localhost:5432/notion-core}
     username: ${NOTION_CORE_DATABASE_USERNAME:postgres}

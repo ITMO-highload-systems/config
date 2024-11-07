@@ -11,8 +11,6 @@ spring:
         locator:
           lower-case-service-id: true
           enabled: true
-  application:
-    name: notion-gateway
 
 logging:
   level:
