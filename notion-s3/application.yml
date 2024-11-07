@@ -1,8 +1,8 @@
 spring:
   r2dbc:
-    username: ${DATABASE_USERNAME:postgres}
-    password: ${DATABASE_PASSWORD:postgres}
-    url: ${DATABASE_URL:r2dbc:postgresql://localhost:5432/notion-s3}
+    username: ${NOTION_S3_DATABASE_USERNAME:postgres}
+    password: ${NOTION_S3_DATABASE_PASSWORD:postgres}
+    url: ${NOTION_S3_DATABASE_URL:r2dbc:postgresql://localhost:5432/notion-s3}
   application:
     name: notion-s3
   servlet:

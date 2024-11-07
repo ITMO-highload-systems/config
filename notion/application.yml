@@ -8,15 +8,10 @@ application:
 spring:
   application:
     name: notion-core
-  servlet:
-    multipart:
-      max-file-size: ${SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE:200MB}
-      max-request-size: ${SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE:200MB}
-      enabled: true
   datasource:
-    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/notion-core}
-    username: ${DATABASE_USERNAME:postgres}
-    password: ${DATABASE_PASSWORD:postgres}
+    url: ${NOTION_CORE_DATABASE_URL:jdbc:postgresql://localhost:5432/notion-core}
+    username: ${NOTION_CORE_DATABASE_USERNAME:postgres}
+    password: ${NOTION_CORE_DATABASE_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
 
   flyway:

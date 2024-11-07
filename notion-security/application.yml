@@ -9,9 +9,9 @@ spring:
   application:
     name: notion-security
   datasource:
-    url: jdbc:postgresql://localhost:5432/notion_security
-    username: postgres
-    password: postgres
+    url: ${NOTION_SECURITY_DATABASE_URL:jdbc:postgresql://localhost:5432/notion_security}
+    username: ${NOTION_SECURITY_DATABASE_USERNAME:postgres}
+    password: ${NOTION_SECURITY_DATABASE_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
   flyway:
     enabled: true

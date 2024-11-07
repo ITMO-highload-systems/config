@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/notion-code-exec}
-    username: ${DATABASE_USERNAME:postgres}
-    password: ${DATABASE_PASSWORD:postgres}
+    url: ${NOTION_CODE_DATABASE_URL:jdbc:postgresql://localhost:5432/notion-code-exec}
+    username: ${NOTION_CODE_DATABASE_USERNAME:postgres}
+    password: ${NOTION_CODE_DATABASE_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
 
   flyway:
@@ -11,16 +11,6 @@ spring:
 
 docker:
   image: "python-container"
-
-  datasource:
-    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/postgres}
-    username: ${DATABASE_USERNAME:postgres}
-    password: ${DATABASE_PASSWORD:postgres}
-    driver-class-name: org.postgresql.Driver
-
-  flyway:
-    enabled: true
-    baseline-on-migrate: true
 
 server:
   port: 0
