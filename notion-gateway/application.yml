@@ -19,9 +19,7 @@ eureka:
 
 logging:
   level:
-    org:
-      springframework:
-        security: DEBUG
+    root: DEBUG
 
 management:
   endpoints:
