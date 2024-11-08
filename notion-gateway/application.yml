@@ -19,7 +19,7 @@ eureka:
 
 logging:
   level:
-    root: DEBUG
+    root: ${GATEWAY_LOG_LEVEL:DEBUG}
 
 management:
   endpoints:
