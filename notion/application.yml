@@ -22,16 +22,6 @@ sse:
 server:
   port: 0
 
-feign:
-  hystrix:
-    enabled: true
-  client:
-    config:
-      executorServiceClient:
-        connectTimeout: 60000
-        readTimeout: 60000
-        loggerLevel: basic
-
 management:
   endpoints:
     web:
