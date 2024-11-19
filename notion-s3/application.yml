@@ -26,13 +26,6 @@ minio:
 server:
   port: 0
 
-application:
-  security:
-    jwt:
-      expiration: 123456789
-      server-expiration: 123456789009876
-      secret-key: MegaLargeSigningSecretKeyForDemoApplicationMegaLargeSigningSecretKeyForDemoApplication
-
 logging:
   level:
     org:
