@@ -13,7 +13,7 @@ docker:
   image: "python-container"
 
 server:
-  port: 0
+  port: 52835
 
 application:
   docker:
