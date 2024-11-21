@@ -6,6 +6,14 @@ application:
       secret-key: MegaLargeSigningSecretKeyForDemoApplicationMegaLargeSigningSecretKeyForDemoApplication
 
 spring:
+  kafka:
+    producer:
+      client-id: ${spring.application.name}
+      key-serializer: "org.apache.kafka.common.serialization.StringSerializer"
+      value-serializer: "org.springframework.kafka.support.serializer.JsonSerializer"
+      retries: 3
+    bootstrap-servers: host.docker.internal:29092,host.docker.internal:29093, host.docker.internal:29094
+
   datasource:
     url: ${NOTION_CORE_DATABASE_URL:jdbc:postgresql://localhost:5432/notion-core}
     username: ${NOTION_CORE_DATABASE_USERNAME:postgres}
