@@ -7,8 +7,6 @@ application:
 
 spring:
   kafka:
-    security:
-      protocol: PLAINTEXT_HOST
     producer:
       client-id: ${spring.application.name}
       key-serializer: "org.apache.kafka.common.serialization.StringSerializer"
