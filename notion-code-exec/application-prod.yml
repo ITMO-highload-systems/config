@@ -1,4 +1,17 @@
 spring:
+  kafka:
+    client-id: ${spring.application.name}
+    producer:
+      properties:
+        spring:
+          json:
+            add:
+              type:
+                headers: false
+      key-serializer: "org.apache.kafka.common.serialization.LongSerializer"
+      value-serializer: "org.apache.kafka.common.serialization.StringSerializer"
+      retries: 3
+    bootstrap-servers: localhost:9092,localhost:9093,localhost:9094
   datasource:
     url: ${NOTION_CODE_DATABASE_URL:jdbc:postgresql://localhost:5432/notion-code-exec}
     username: ${NOTION_CODE_DATABASE_USERNAME:postgres}
