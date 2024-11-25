@@ -9,6 +9,11 @@ spring:
     name: api-gateway
   cloud:
     gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
       discovery:
         locator:
           lower-case-service-id: true
