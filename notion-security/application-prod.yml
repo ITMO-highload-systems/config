@@ -37,3 +37,6 @@ resilience4j:
         minimum-number-of-calls: 5
         failure-rate-threshold: 50
         wait-duration-in-open-state: 5s
+logging:
+  level:
+    root: debug
