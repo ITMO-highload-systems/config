@@ -14,10 +14,10 @@ spring:
           lower-case-service-id: true
           enabled: true
       routes:
-        - id: notion
+        - id: notion-core
           uri: lb://notion
           predicates:
-            - Path=/notion/**
+            - Path=/notion-core/**
 
 eureka:
   client:
