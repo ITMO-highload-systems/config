@@ -17,7 +17,7 @@ sse:
   timeout: 3000
 
 server:
-  port: 8085
+  port: 0
 
 eureka:
   client:
