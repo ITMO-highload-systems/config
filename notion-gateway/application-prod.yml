@@ -54,3 +54,5 @@ springdoc:
         name: S3 Service
       - url: /notion-security/v3/api-docs
         name: Security Service
+      - url: /notion-code-exec/v3/api-docs
+        name: Code Exec Service
