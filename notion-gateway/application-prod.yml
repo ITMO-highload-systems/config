@@ -36,3 +36,21 @@ resilience4j:
         minimum-number-of-calls: 5
         failure-rate-threshold: 50
         wait-duration-in-open-state: 5s
+
+springdoc:
+  enable-native-support: true
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    config-url: /v3/api-docs/swagger-config
+    urls:
+      - url: /v3/api-docs
+        name: API Gateway Service
+      - url: /notion/v3/api-docs
+        name: Notion Service
+      - url: /notion-s3/v3/api-docs
+        name: S3 Service
+      - url: /notion-security/v3/api-docs
+        name: Security Service
