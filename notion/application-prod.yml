@@ -52,6 +52,9 @@ logging:
   level:
     root: debug
 
+websocket:
+  server-address: ${WEBSOCKET_SERVER_ADDRESS:ws://localhost:52835/ws}
+
 resilience4j.circuitbreaker:
   configs:
     default:
