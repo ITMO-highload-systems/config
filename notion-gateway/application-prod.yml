@@ -5,12 +5,19 @@ app:
   security-server-name: notion-security
 
 spring:
+  application:
+    name: api-gateway
   cloud:
     gateway:
       discovery:
         locator:
           lower-case-service-id: true
           enabled: true
+      routes:
+        - id: notion
+          uri: lb://notion
+          predicates:
+            - Path=/notion/**
 
 eureka:
   client:
