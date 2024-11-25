@@ -19,11 +19,6 @@ spring:
         locator:
           lower-case-service-id: true
           enabled: true
-      routes:
-        - id: notion-core
-          uri: lb://notion
-          predicates:
-            - Path=/notion-core/**
 
 eureka:
   client:
